@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lucifer Support</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&display=swap');
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            overflow: hidden;
+            font-family: 'Orbitron', monospace;
+            background: linear-gradient(135deg, #0a0a0a 0%, #1a1a1a 50%, #0a0a0a 100%);
+            color: #ffffff;
+            text-align: center;
+            position: relative;
+        }
+
+        .container {
+            position: relative;
+            z-index: 10;
+            padding: 2rem;
+            background: rgba(0, 0, 0, 0.7);
+            border-radius: 20px;
+            border: 2px solid #ff6b35;
+            box-shadow: 0 0 30px rgba(255, 107, 53, 0.3);
+            backdrop-filter: blur(10px);
+            max-width: 600px;
+            width: 90%;
+        }
+
+        .logo {
+            font-size: 3.5em;
+            font-weight: 900;
+            margin-bottom: 1rem;
+            background: linear-gradient(45deg, #ff6b35, #f7931e, #ff6b35);
+            background-size: 200% 200%;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            animation: gradientShift 3s ease-in-out infinite, glow 2s ease-in-out infinite alternate;
+        }
+
+        .subtitle {
+            font-size: 1.2em;
+            font-weight: 400;
+            margin-bottom: 2rem;
+            color: #cccccc;
+            letter-spacing: 2px;
+        }
+
+        .description {
+            font-size: 0.9em;
+            line-height: 1.6;
+            color: #aaaaaa;
+            margin-bottom: 2rem;
+            font-weight: 400;
+        }
+
+        .features {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1rem;
+            margin-bottom: 2rem;
+        }
+
+        .feature {
+            background: rgba(255, 107, 53, 0.1);
+            padding: 1rem;
+            border-radius: 10px;
+            border: 1px solid rgba(255, 107, 53, 0.3);
+            transition: all 0.3s ease;
+        }
+
+        .feature:hover {
+            background: rgba(255, 107, 53, 0.2);
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(255, 107, 53, 0.2);
+        }
+
+        .feature h3 {
+            color: #ff6b35;
+            font-size: 0.9em;
+            margin-bottom: 0.5rem;
+        }
+
+        .feature p {
+            font-size: 0.8em;
+            color: #cccccc;
+        }
+
+        .status {
+            display: inline-block;
+            padding: 0.5rem 1rem;
+            background: rgba(0, 255, 0, 0.2);
+            border: 1px solid #00ff00;
+            border-radius: 20px;
+            color: #00ff00;
+            font-size: 0.8em;
+            animation: pulse 2s infinite;
+        }
+
+        .invite-button {
+            display: inline-block;
+            margin-top: 1rem;
+            padding: 1rem 2rem;
+            background: linear-gradient(45deg, #5865f2, #7289da);
+            color: white;
+            text-decoration: none;
+            border-radius: 25px;
+            font-weight: 700;
+            font-size: 1.1em;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(88, 101, 242, 0.4);
+            border: 2px solid #5865f2;
+        }
+
+        .invite-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 25px rgba(88, 101, 242, 0.6);
+            background: linear-gradient(45deg, #4752c4, #5865f2);
+        }
+
+        .invite-button:active {
+            transform: translateY(-1px);
+        }
+
+        .invite-icon {
+            margin-right: 0.5rem;
+        }
+
+        .dashboard-btn {
+            display: inline-block;
+            margin-top: 1rem;
+            margin-left: 1rem;
+            padding: 1rem 2rem;
+            background: linear-gradient(45deg, #ff6b35, #f7931e);
+            color: white;
+            text-decoration: none;
+            border-radius: 25px;
+            font-weight: 700;
+            font-size: 1.1em;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(255, 107, 53, 0.4);
+            border: 2px solid #ff6b35;
+        }
+
+        .dashboard-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 25px rgba(255, 107, 53, 0.6);
+            background: linear-gradient(45deg, #e55a2b, #ff6b35);
+        }
+
+        .dashboard-btn:active {
+            transform: translateY(-1px);
+        }
+
+        .button-group {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 1rem;
+            flex-wrap: wrap;
+        }
+
+        @keyframes gradientShift {
+            0%, 100% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+        }
+
+        @keyframes glow {
+            from { text-shadow: 0 0 10px rgba(255, 107, 53, 0.5); }
+            to { text-shadow: 0 0 20px rgba(255, 107, 53, 0.8), 0 0 30px rgba(255, 107, 53, 0.6); }
+        }
+
+        @keyframes pulse {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.7; }
+        }
+
+        .particles {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+            z-index: 1;
+            pointer-events: none;
+        }
+
+        .particle {
+            position: absolute;
+            width: 2px;
+            height: 2px;
+            background: #ff6b35;
+            border-radius: 50%;
+            animation: float 6s linear infinite;
+        }
+
+        @keyframes float {
+            0% {
+                transform: translateY(100vh) translateX(0);
+                opacity: 0;
+            }
+            10% {
+                opacity: 1;
+            }
+            90% {
+                opacity: 1;
+            }
+            100% {
+                transform: translateY(-100px) translateX(100px);
+                opacity: 0;
+            }
+        }
+
+        .floating-elements {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 1;
+            pointer-events: none;
+        }
+
+        .floating-element {
+            position: absolute;
+            width: 1px;
+            height: 100%;
+            background: linear-gradient(to bottom, transparent, #ff6b35, transparent);
+            opacity: 0.3;
+            animation: moveAndFade 8s linear infinite;
+        }
+
+        @keyframes moveAndFade {
+            0% {
+                transform: translateY(-100%);
+                opacity: 0;
+            }
+            50% {
+                opacity: 0.3;
+            }
+            100% {
+                transform: translateY(100%);
+                opacity: 0;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .logo {
+                font-size: 2.5em;
+            }
+            .subtitle {
+                font-size: 1em;
+            }
+            .features {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="particles" id="particles"></div>
+    <div class="floating-elements" id="floatingElements"></div>
+    
+    <div class="container">
+        <div class="logo">LUCIFER SUPPORT</div>
+        <div class="subtitle">Advanced Discord Bot Platform</div>
+        <div class="description">
+            A powerful all-in-one Discord bot featuring moderation, music, economy, games, and much more. 
+            Designed to enhance your server experience with cutting-edge features and reliable performance.
+        </div>
+        
+        <div class="features">
+            <div class="feature">
+                <h3>🎵 Music System</h3>
+                <p>High-quality music playback with queue management and advanced controls</p>
+            </div>
+            <div class="feature">
+                <h3>🛡️ Moderation</h3>
+                <p>Comprehensive moderation tools with anti-raid and anti-spam protection</p>
+            </div>
+            <div class="feature">
+                <h3>💰 Economy</h3>
+                <p>Complete economy system with jobs, shops, and interactive features</p>
+            </div>
+            <div class="feature">
+                <h3>🎮 Entertainment</h3>
+                <p>Fun games, memes, and interactive commands for community engagement</p>
+            </div>
+        </div>
+        
+        <div class="status">🟢 ONLINE & OPERATIONAL</div>
+
+        <div class="button-group">
+            <a href="https://discord.com/oauth2/authorize?client_id=1382287411748540496&permissions=8&integration_type=0&scope=bot" class="invite-button">
+                <span class="invite-icon">🤖</span>
+                Invite Bot
+            </a>
+            <a href="/dashboard" class="dashboard-btn">
+                📊 Dashboard
+            </a>
+        </div>
+    </div>
+
+    <script>
+        // Create floating particles
+        function createParticles() {
+            const particlesContainer = document.getElementById('particles');
+            for (let i = 0; i < 50; i++) {
+                const particle = document.createElement('div');
+                particle.className = 'particle';
+                particle.style.left = Math.random() * 100 + '%';
+                particle.style.animationDelay = Math.random() * 6 + 's';
+                particle.style.animationDuration = (Math.random() * 3 + 3) + 's';
+                particlesContainer.appendChild(particle);
+            }
+        }
+
+        // Create floating elements
+        function createFloatingElements() {
+            const floatingContainer = document.getElementById('floatingElements');
+            for (let i = 0; i < 15; i++) {
+                const element = document.createElement('div');
+                element.className = 'floating-element';
+                element.style.left = Math.random() * 100 + '%';
+                element.style.animationDelay = Math.random() * 8 + 's';
+                element.style.animationDuration = (Math.random() * 4 + 6) + 's';
+                floatingContainer.appendChild(element);
+            }
+        }
+
+        // Initialize animations
+        createParticles();
+        createFloatingElements();
+    </script>
+</body>
+</html>

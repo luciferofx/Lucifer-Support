@@ -1,0 +1,24 @@
+{
+    "token": "MTM4MjI4NzQxMTc0ODU0MDQ5Ng.G-J81g.lq0ob5HrmfxJ1jamWx4-wpRYvUFyDYU6NO9OvI",
+    "language": "en",
+    "prefix": "!",
+    "mongodbUri": "mongodb+srv://raja:Raja9315@cluster0.jvibbj6.mongodb.net/?retryWrites=true&w=majority",
+    "excessCommands": {
+        "utility": true,
+        "other": true,
+        "hentai": true,
+        "troll": true,
+        "economy" : true
+    },
+    "categories": {
+        "media": true,
+        "basic": true,
+        "utility": true,
+        "moderation": true,
+        "core" :true,
+        "lavalink": true,
+        "fun": true,
+        "distube": true,
+        "setups": true
+    }
+}
