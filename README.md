@@ -1,6 +1,4 @@
 
-![Animated Background](https://i.pinimg.com/736x/eb/46/93/eb4693269c282ef4408a68ff796bc28a.jpg)
-
 # 🎮 LUCIFER SUPPORT - ALL IN ONE BOT 1.2.2
 
 <p align="center">
